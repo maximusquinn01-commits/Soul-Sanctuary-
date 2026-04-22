@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Sanctuary | Hope for the Children</title>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-indigo: #2a3d66; /* The specific blue from your screenshot */
+            --lavender-mist: #f4f6fb; 
+            --btn-peach: #d9ab82; /* Your signature peach/gold color */
+            --white: #ffffff;
+            --text-dark: #1f2937;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--lavender-mist);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--deep-indigo);
+            text-transform: uppercase;
+        }
+
+        /* --- CENTRALIZED CONTAINER --- */
+        .main-wrapper {
+            max-width: 900px; 
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('of.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(45px, 8vw, 65px);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            color: var(--white);
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: var(--white);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* RECTANGULAR PEACH BUTTON IN HERO */
+        .hero-book-btn {
+            display: inline-block;
+            background: var(--btn-peach);
+            color: white;
+            padding: 22px 55px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+            border-radius: 0; 
+            transition: 0.3s;
+        }
+
+        /* --- IMPACT BOX SECTION --- */
+        .services {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title { margin-bottom: 60px; }
+        .section-title h2 { font-size: 45px; text-transform: uppercase; color: var(--deep-indigo); }
+        .section-title div { width: 50px; height: 2px; background: var(--btn-peach); margin: 15px auto; }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* ROUNDED BOXES (INFO TOP, IMAGE BOTTOM) */
+        .service-card {
+            background: var(--white);
+            border-radius: 60px; 
+            transition: 0.4s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .service-info {
+            padding: 60px 45px;
+            order: 1; 
+        }
+
+        .service-info h3 { 
+            font-size: 28px; 
+            margin-bottom: 12px; 
+            text-transform: uppercase;
+            color: var(--deep-indigo);
+        }
+
+        .impact-tag { 
+            font-weight: 700; 
+            color: var(--btn-peach); 
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-info p { 
+            font-size: 18px; 
+            color: #666;
+            font-weight: 300;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 420px; 
+            object-fit: cover;
+            order: 2; 
+        }
+
+        /* --- MASSIVE CINEMATIC BANNER --- */
+        .mid-banner {
+            width: 100%;
+            height: auto; 
+            max-height: 900px;
+            object-fit: cover;
+            border-radius: 40px;
+            display: block;
+            margin: 100px 0;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        /* --- FOOTER (EXACTLY AS SCREENSHOT) --- */
+        .final-footer {
+            background-color: var(--deep-indigo);
+            padding: 120px 10% 80px;
+            text-align: center;
+            color: var(--white);
+            border-radius: 60px 60px 0 0;
+        }
+
+        .final-footer h2 {
+            font-size: 60px;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .final-footer p {
+            max-width: 650px;
+            margin: 0 auto 50px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* SCREENSHOT OVAL BUTTON STYLE */
+        .donate-btn-final {
+            display: inline-block;
+            padding: 25px 80px;
+            border: 2px solid var(--btn-peach);
+            border-radius: 80px; /* Pill/Oval shape */
+            text-decoration: none;
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 60px;
+            transition: 0.3s;
+        }
+
+        .donate-btn-final span {
+            border-bottom: 2px solid var(--btn-peach); /* Underline from screenshot */
+            padding-bottom: 2px;
+        }
+
+        .donate-btn-final:hover {
+            background-color: var(--btn-peach);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .social-links a {
+            color: var(--btn-peach);
+            font-size: 50px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright-text {
+            font-size: 16px;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1, .final-footer h2 { font-size: 40px; }
+            .final-footer p { font-size: 18px; }
+            .donate-btn-final { padding: 18px 50px; font-size: 18px; }
+            .brand { font-size: 24px; }
+            .mid-banner { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav><div class="brand">SOUL SANCTUARY</div></nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hope for the <br>Innocent Hearts</h1>
+            <p>Dedicated to providing a dignified future and a path toward a brighter tomorrow.</p>
+            <a href="https://www.paypal.com/ncp/payment/6MBWXSZEQZCH2" class="hero-book-btn">Donate Now</a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        
+        <section class="services">
+            <div class="section-title">
+                <h2>Our Compassion Pillars</h2>
+                <div></div>
+            </div>
+
+            <div class="service-grid">
+                <!-- Box 1 -->
+                <div class="service-card">
+                    <div class="service-info">
+                        <span class="impact-tag">Sanctuary</span>
+                        <h3>Health & Nutrition</h3>
+                        <p>Providing three nutritious daily meals and medical support to ensure every child grows strong and vibrant.</p>
+                    </div>
+                    <img src="of1.jpg" class="service-img">
+                </div>
+
+                <!-- Box 2 -->
+                <div class="service-card">
+                    <div class="service-info">
+                        <span class="impact-tag">Empowerment</span>
+                        <h3>Education & Growth</h3>
+                        <p>Access to quality schooling and learning materials to break the cycle of hardship and secure their future.</p>
+                    </div>
+                    <img src="of2.jpg" class="service-img">
+                </div>
+
+                <!-- Box 3 -->
+                <div class="service-card">
+                    <div class="service-info">
+                        <span class="impact-tag">Sustainability</span>
+                        <h3>Beds & Clean Water</h3>
+                        <p>Raising funds for safe sleeping environments, warm blankets, and access to clean drinking water.</p>
+                    </div>
+                    <img src="of3.jpg" class="service-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- MASSIVE FLOWING BANNER -->
+        <img src="of4.jpg" class="mid-banner">
+
+    </div>
+
+    <!-- FINAL FOOTER (AS PER YOUR SCREENSHOT) -->
+    <footer class="final-footer">
+        <div class="main-wrapper">
+            <h2>Your Heart, Their Hope</h2>
+            <p>We are a small foundation taking our first steps. Join us in building a legacy of kindness that lasts forever.</p>
+            
+            <a href="https://www.paypal.com/ncp/payment/6MBWXSZEQZCH2" class="donate-btn-final">
+                <span>Donate Now</span>
+            </a>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <p class="copyright-text">© 2024 Soul Sanctuary Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
